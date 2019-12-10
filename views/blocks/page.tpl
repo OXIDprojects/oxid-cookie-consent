@@ -17,15 +17,17 @@
       "handleBrowserDNTRequest": [{$oViewConf->convert($oConf->getConfigParam('cmHandleBrowserDNTRequest'))}],
       "removeCredit": [{$oViewConf->convert($oConf->getConfigParam('cmRemoveCredit'))}],
       "moreInfoLink": [{$oViewConf->convert($oConf->getConfigParam('cmMoreInfoLink'))}],
+
    });
    tarteaucitron.services.oxid = {
       "key": "oxid",
       "type": "other",
       "name": "Essentielle Cookies für den Shop",
-      "needConsent": false,
+      "needConsent": true,
       "cookies": ['sid', 'sid_key','language'],
-      "readmoreLink": "[{$securityinfo}]",
+      "readmoreLink": "http://google.de",
       "js": function () {
+
          "use strict";
 
       },
