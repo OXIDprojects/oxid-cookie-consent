@@ -2,7 +2,7 @@
 [{assign var="securityinfo" value=$oCont->getLink()}]
 [{/oxifcontent}]
 [{assign var="oConf" value=$oViewConf->getConfig()}]
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.js"></script>
 <script>
    tarteaucitron.init({
       "privacyUrl": "[{$securityinfo}]",
@@ -23,9 +23,9 @@
       "key": "oxid",
       "type": "other",
       "name": "Essentielle Cookies für den Shop",
-      "needConsent": true,
-      "cookies": ['sid', 'sid_key','language'],
-      "readmoreLink": "http://google.de",
+      "needConsent": false,
+      "cookies": ['sid', 'sid_key', 'language'],
+      "uri": "[{$securityinfo}]",
       "js": function () {
 
          "use strict";
