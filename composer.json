@@ -1,0 +1,27 @@
+{
+  "name": "oxid-professional-services/oxid-cookie-consent",
+  "description": "CookieManager Modul",
+  "type": "oxideshop-module",
+  "minimum-stability": "stable",
+  "extra": {
+    "oxideshop": {
+      "target-directory": "oxps/cookiemanager"
+    }
+  },
+   "require": {
+    "oxid-esales/oxideshop-ce": "^6.1"
+  },
+
+   "require-dev": {
+    "oxid-professional-services/install-oxid-for-module": "dev-rd",
+    "phpstan/phpstan-shim": "dev-master",
+    "squizlabs/php_codesniffer": ">=2.3.1 <4.0",
+    "alfredbez/oxid-dump-autoload": "^0.1.0"
+
+   },
+  "autoload": {
+    "psr-4": {
+      "OxidProfessionalServices\\CookieManager\\": ""
+    }
+  }
+}

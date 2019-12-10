@@ -1,0 +1,36 @@
+image: keywanghadamioxid/oxid-test:6.2
+
+test:static:
+  script:
+    - /var/www/OXID/vendor/bin/phpcs --standard=PSR12 --extensions=php --ignore="vendor/|Scripts|tests" .
+    - find . -not -path "./vendor/*" -name "*.php" -print0 | xargs -0 -n1 -P8 php -l
+
+.test_template: &test_definition
+  script:
+    - bash /var/www/OXID/setup.sh
+    - MD=$(pwd)
+    - cd /var/www/OXID
+    - composer require oxid-professional-services/oxid-console:dev-fixRcCommand
+    - vendor/bin/oxid module:activate oxps/cookiemanager
+    - vendor/bin/oxid-dump-autoload
+    #- cat autoload.oxid.php
+    - vendor/bin/phpstan analyse --configuration phpstan.neon $MD
+    - vendor/bin/runtests
+  services:
+    - mariadb:10.2.24
+  after_script:
+    - composer config cache-dir
+
+test:OXID6.1:
+  <<: *test_definition
+  image: keywanghadamioxid/oxid-test:6.1
+
+test:OXID6.2:
+  <<: *test_definition
+  allow_failure: true
+
+variables:
+  DB_HOST: 'mariadb'
+  MYSQL_DATABASE: 'oxid'
+  #  MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+  MYSQL_ROOT_PASSWORD: 'root'
