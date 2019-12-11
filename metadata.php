@@ -18,6 +18,11 @@ $aModule = [
             'block' => 'layout_header',
             'file' => 'views/blocks/layout/page.tpl',
         ),
+        array(
+            'template' => 'widget/dynscript.tpl',
+            'block' => 'GoogleAnalytics',
+            'file' => 'views/blocks/widget/dynscript.tpl',
+        )
 
     ),
 
