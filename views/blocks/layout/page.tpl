@@ -1,11 +1,9 @@
 [{assign var="oConf" value=$oViewConf->getConfig()}]
-[{if $oConf->getConfigParam('cmSettings') == 'tarteaucitron'}]
-    [{oxifcontent ident="oxsecurityinfo" object="oCont"}]
+[{oxifcontent ident="oxsecurityinfo" object="oCont"}]
     [{assign var="securityinfo" value=$oCont->getLink()}]
     [{/oxifcontent}]
-
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.js"></script>
+[{if $oConf->getConfigParam('cmSettings') == 'tarteaucitron'}]
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.js"></script>
     <script>
         tarteaucitron.init({
             "privacyUrl": "[{$securityinfo}]",
@@ -45,21 +43,15 @@
 
     </script>
     [{else}]
-   <script>
+    <script>
        var klaroConfig = {
-           // Element id des div Elements in welches klaro erstellen wird
+
            elementID: 'klaro',
-           // Cookie name welches klaro setzt um die Settings zu Speichern
            cookieName: 'klaro',
-           // By default, it will expire after 120 days.
-           cookieExpiresAfterDays: 365,
-           // Link (relativ oder absolut) zur Datenschutzerlkärung
-           privacyPolicy: '/datenschutzerklarung',
-           // Default status für die Elemente im Modal (app) (true=enabled by default).
+           cookieExpiresAfterDays: [{$oConf->getConfigParam('klaCookieExpiryDate')}],
+           privacyPolicy: '[{$securityinfo}]',
            default: true,
-           // Wenn "mustConsent" ist auf true gesetzt, Klaro wird direkt beim laden der Seite geöffnet und fragt nach Einwilligung
-           mustConsent: true,
-           //Übersetzungen zusätzlich
+           mustConsent: [{$oViewConf->convert($oConf->getConfigParam('klaMustConsent'))}],
            translations: {
                de: {
                    consentModal: {
@@ -76,7 +68,7 @@
                        analytics: 'Besucher-Statistiken',
                        advertising: 'Anzeigen von Werbung',
                    },
-                   close: 'speichern'
+
                },
                en: {
                    googleAnalytics: {
@@ -93,11 +85,10 @@
                        analytics: 'Analytics',
                        advertising: 'Advertising',
                    },
-                   close: 'save'
                },
 
            },
-           // apps sektion, hier nur Google Analytics
+           // Google Analytics //
            apps: [
                {
                    name : 'googleAnalytics',
@@ -109,12 +100,7 @@
            ],
        };
    </script>
-    <script defer type="text/javascript"
-            src="https://cdn.jsdelivr.net/gh/OXIDprojects/oxid-cookie-consent@latest/lib/klaro.js"></script>
-    <p>
-        <a href="" onClick="return klaro.show()">Open Config</a>.
-    </p>
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/OXIDprojects/oxid-cookie-consent@latest/lib/klaro.js"></script>
     [{/if}]
-
 
 [{$smarty.block.parent}]
