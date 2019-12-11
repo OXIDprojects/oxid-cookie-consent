@@ -68,6 +68,11 @@
                        analytics: 'Besucher-Statistiken',
                        advertising: 'Anzeigen von Werbung',
                    },
+                   essentialOxid: {
+                       description: 'Sammeln von Besucherstatistiken',
+                       analytics: 'Besucher-Statistiken',
+                       advertising: 'Anzeigen von Werbung',
+                   }
 
                },
                en: {
@@ -85,11 +90,24 @@
                        analytics: 'Analytics',
                        advertising: 'Advertising',
                    },
+                   essentialOxid: {
+                       description: 'Sammeln von Besucherstatistiken',
+                       analytics: 'Besucher-Statistiken',
+                       advertising: 'Anzeigen von Werbung',
+                   }
+
                },
 
            },
            // Google Analytics //
            apps: [
+               {
+                   name : 'essentialOxid',
+                   required : true,
+                   title : 'Essentielle OxidShop Cookies',
+                   purposes : ['statistics', 'advertising'],
+                   cookies : [],
+               },
                {
                    name : 'googleAnalytics',
                    default: true,
@@ -97,6 +115,7 @@
                    purposes : ['statistics', 'advertising'],
                    cookies : [/^ga/i],
                },
+
            ],
        };
    </script>
