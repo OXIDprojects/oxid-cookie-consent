@@ -16,15 +16,18 @@ $aModule = [
         array(
             'template' => 'layout/page.tpl',
             'block' => 'layout_header',
-            'file' => 'views/blocks/page.tpl',
+            'file' => 'views/blocks/layout/page.tpl',
         ),
 
     ),
 
     'settings' => array(
-        array('group' => 'cookiemanager_settings', 'name' => 'cmSettings', 'type' => 'select',   'value' => 'Consent Manager', 'constraints' => 'tarteaucitron|klaro'),
-        array('group' => 'tarteaucitron_settings', 'name' => 'tacHashtag', 'type' => 'str', 'value' => '#tarteaucitron'),
-        array('group' => 'tarteaucitron_settings', 'name' => 'tacCookieName', 'type' => 'str', 'value' => 'tartaucitron'),
+        array('group' => 'cookiemanager_settings', 'name' => 'cmSettings',
+            'type' => 'select', 'value' => 'Consent Manager', 'constraints' => 'tarteaucitron|klaro'),
+        array('group' => 'tarteaucitron_settings', 'name' => 'tacHashtag',
+            'type' => 'str', 'value' => '#tarteaucitron'),
+        array('group' => 'tarteaucitron_settings', 'name' => 'tacCookieName',
+            'type' => 'str', 'value' => 'tartaucitron'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacOrientation', 'type' => 'str', 'value' => 'bottom'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacShowAlertSmall', 'type' => 'bool', 'value' => 'true'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacCookiesList', 'type' => 'bool', 'value' => 'true'),
@@ -39,9 +42,7 @@ $aModule = [
 
     ),
 
-    'controllers' => array(
-
-    ),
+    'controllers' => array(),
 
     'extend' => array(
         \OxidEsales\Eshop\Core\ViewConfig::class => \OxidProfessionalServices\CookieManager\Core\ViewConfig::class
