@@ -6,8 +6,9 @@ $sLangName = 'Deutsch';
 
 $aLang = array(
     'SHOP_MODULE_GROUP_cookiemanager_settings' => 'CookieManager Einstellungen',
-    'SHOP_MODULE_cmSettings' => 'Consent Cookie Manager',
     'SHOP_MODULE_GROUP_tarteaucitron_settings' => 'TarteAuCitron Einstellungen',
+    'SHOP_MODULE_GROUP_klaro_settings' => 'Klaro Einstellungen',
+    'SHOP_MODULE_cmSettings' => 'Consent Cookie Manager',
     'SHOP_MODULE_cmSettings_tarteaucitron' => 'TarteAuCitron',
     'SHOP_MODULE_cmSettings_klaro' => 'Klaro',
     'SHOP_MODULE_tacPrivacyUrl' => 'Datenschutz CMS Ident',
@@ -22,6 +23,8 @@ $aLang = array(
     'SHOP_MODULE_tacHandleBrowserDNTRequest' => 'DNT Request',
     'SHOP_MODULE_tacRemoveCredit' => 'Credit-Link entfernen',
     'SHOP_MODULE_tacMoreInfoLink' => 'Mehr-anzeigen-Link',
+    'SHOP_MODULE_klaCookieExpiryDate' => 'Cookie Ablaufdatum',
+    'SHOP_MODULE_klaMustConsent' => 'Zustimmung erforderlich'
 
 
 );

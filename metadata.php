@@ -23,12 +23,14 @@ $aModule = [
             'block' => 'GoogleAnalytics',
             'file' => 'views/blocks/widget/dynscript.tpl',
         )
-
     ),
 
     'settings' => array(
+        // Main Settings //
         array('group' => 'cookiemanager_settings', 'name' => 'cmSettings',
             'type' => 'select', 'value' => 'Consent Manager', 'constraints' => 'tarteaucitron|klaro'),
+
+        // TarteAuCitron Settings //
         array('group' => 'tarteaucitron_settings', 'name' => 'tacHashtag',
             'type' => 'str', 'value' => '#tarteaucitron'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacCookieName',
@@ -42,8 +44,11 @@ $aModule = [
         array('group' => 'tarteaucitron_settings', 'name' => 'tacHandleBrowserDNTRequest',
             'type' => 'bool', 'value' => 'false'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacRemoveCredit', 'type' => 'bool', 'value' => 'false'),
-        array('group' => 'tarteaucitron_settings', 'name' => 'tacMoreInfoLink', 'type' => 'bool', 'value' => 'true')
+        array('group' => 'tarteaucitron_settings', 'name' => 'tacMoreInfoLink', 'type' => 'bool', 'value' => 'true'),
 
+        // Klaro Settings //
+        array('group' => 'klaro_settings', 'name' => 'klaCookieExpiryDate', 'type' => 'num', 'value' => '365'),
+        array('group' => 'klaro_settings', 'name' => 'klaMustConsent', 'type' => 'bool', 'value' => 'true')
 
     ),
 
