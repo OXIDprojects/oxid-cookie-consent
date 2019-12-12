@@ -3,7 +3,7 @@
     [{assign var="securityinfo" value=$oCont->getLink()}]
     [{/oxifcontent}]
 [{if $oConf->getConfigParam('cmSettings') == 'tarteaucitron'}]
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.js"></script>
+    <script type="text/javascript" src=[{$oViewConf->getModuleUrl('oxps/cookiemanager','lib/tarteaucitron.js')}]></script>
     <script>
         tarteaucitron.init({
             "privacyUrl": "[{$securityinfo}]",
@@ -24,7 +24,7 @@
             "key": "oxid",
             "type": "other",
             "name": "Technically necessary cookies",
-            "needConsent": false,
+            "needConsent": true,
             "cookies": ['sid', 'sid_key', 'language'],
             "uri": "[{$securityinfo}]",
             "js": function () {
@@ -119,7 +119,7 @@
            ],
        };
    </script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/OXIDprojects/oxid-cookie-consent@latest/lib/klaro.js"></script>
+    [{oxscript include=$oViewConf->getModuleUrl('oxps/cookiemanager','lib/klaro.js')}]
     [{/if}]
 
 [{$smarty.block.parent}]
