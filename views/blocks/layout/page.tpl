@@ -23,8 +23,8 @@
         tarteaucitron.services.oxid = {
             "key": "oxid",
             "type": "other",
-            "name": "Essentielle Cookies für den Shop",
-            "needConsent": false,
+            "name": "Technically necessary cookies",
+            "needConsent": true,
             "cookies": ['sid', 'sid_key', 'language'],
             "uri": "[{$securityinfo}]",
             "js": function () {
@@ -37,9 +37,9 @@
 
             }
         };
+        (tarteaucitron.job = tarteaucitron.job || []).push('oxid');
         (tarteaucitron.job = tarteaucitron.job || []).push('analytics');
         (tarteaucitron.job = tarteaucitron.job || []).push('googlemaps');
-        (tarteaucitron.job = tarteaucitron.job || []).push('oxid');
 
     </script>
     [{else}]
