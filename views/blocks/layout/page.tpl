@@ -23,8 +23,8 @@
         tarteaucitron.services.oxid = {
             "key": "oxid",
             "type": "other",
-            "name": "Essentielle Cookies für den Shop",
-            "needConsent": false,
+            "name": "Technically necessary cookies",
+            "needConsent": true,
             "cookies": ['sid', 'sid_key', 'language'],
             "uri": "[{$securityinfo}]",
             "js": function () {
@@ -37,9 +37,9 @@
 
             }
         };
+        (tarteaucitron.job = tarteaucitron.job || []).push('oxid');
         (tarteaucitron.job = tarteaucitron.job || []).push('analytics');
         (tarteaucitron.job = tarteaucitron.job || []).push('googlemaps');
-        (tarteaucitron.job = tarteaucitron.job || []).push('oxid');
 
     </script>
     [{else}]
@@ -56,22 +56,24 @@
                de: {
                    consentModal: {
                        description:
-                           'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
+                           'Hier können sie ihre Cookie-Einstellungen für diese Seite ändern.,
                    },
                    purposes: {
-                       analytics: 'Besucher-Statistiken',
-                       advertising: 'Anzeigen von Werbung',
+                       analytics: 'Zugriffsanalysen',
+                       advertising: 'Werbung',
                        statistics: 'Statistiken',
+                       necessary: 'Speichern der Sprachauswahl, des Warenkorbs und des Login-Stutus',
                    },
                    googleAnalytics: {
-                       description: 'Sammeln von Besucherstatistiken',
-                       analytics: 'Besucher-Statistiken',
-                       advertising: 'Anzeigen von Werbung',
+                       description: 'Auswerten von Besucherstatistiken',
+                       analytics: 'Statistiken',
+//                       advertising: 'Anzeigen von Werbung',
                    },
                    essentialOxid: {
-                       description: 'Sammeln von Besucherstatistiken',
-                       analytics: 'Besucher-Statistiken',
-                       advertising: 'Anzeigen von Werbung',
+                       description: 'Technisch notwendige Cookies',
+//                       analytics: 'Besucher-Statistiken',
+//                       advertising: 'Anzeigen von Werbung',
+                       necessary: 'Speichern der Sprachauswahl, des Warenkorbs und des Login-Stutus',
                    }
 
                },
@@ -91,9 +93,10 @@
                        advertising: 'Advertising',
                    },
                    essentialOxid: {
-                       description: 'Sammeln von Besucherstatistiken',
+                       description: 'Speichern der Sprachauswahl, ob ein Benutzer eingeloggt ist, Speichern des Warenkorbs',
                        analytics: 'Besucher-Statistiken',
                        advertising: 'Anzeigen von Werbung',
+                       
                    }
 
                },
@@ -104,8 +107,8 @@
                {
                    name : 'essentialOxid',
                    required : true,
-                   title : 'Essentielle OxidShop Cookies',
-                   purposes : ['statistics', 'advertising'],
+                   title : 'Technisch notwendige Cookies',
+                   purposes : ['necessary'],
                    cookies : [],
                },
                {
