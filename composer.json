@@ -1,6 +1,6 @@
 {
   "name": "oxid-professional-services/oxid-cookie-consent",
-  "description": "CookieManager Modul",
+  "description": "Cookie-Manager Modul",
   "type": "oxideshop-module",
   "minimum-stability": "stable",
   "keywords": [
