@@ -28,7 +28,7 @@ $aModule = [
     'settings' => array(
         // Main Settings //
         array('group' => 'cookiemanager_settings', 'name' => 'cmSettings',
-            'type' => 'select', 'value' => 'Consent Manager', 'constraints' => 'tarteaucitron|klaro'),
+            'type' => 'select', 'value' => 'Consent Manager', 'constraints' => 'klaro|tarteaucitron'),
 
         // TarteAuCitron Settings //
         array('group' => 'tarteaucitron_settings', 'name' => 'tacHashtag',
@@ -39,8 +39,8 @@ $aModule = [
         array('group' => 'tarteaucitron_settings', 'name' => 'tacShowAlertSmall', 'type' => 'bool', 'value' => 'true'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacCookiesList', 'type' => 'bool', 'value' => 'true'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacAdblocker', 'type' => 'bool', 'value' => 'false'),
-        array('group' => 'tarteaucitron_settings', 'name' => 'tacAcceptAllCta', 'type' => 'bool', 'value' => 'true'),
-        array('group' => 'tarteaucitron_settings', 'name' => 'tacHighPrivacy', 'type' => 'bool', 'value' => 'false'),
+        array('group' => 'tarteaucitron_settings', 'name' => 'tacAcceptAllCta', 'type' => 'bool', 'value' => 'false'),
+        array('group' => 'tarteaucitron_settings', 'name' => 'tacHighPrivacy', 'type' => 'bool', 'value' => 'true'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacHandleBrowserDNTRequest',
             'type' => 'bool', 'value' => 'false'),
         array('group' => 'tarteaucitron_settings', 'name' => 'tacRemoveCredit', 'type' => 'bool', 'value' => 'false'),
