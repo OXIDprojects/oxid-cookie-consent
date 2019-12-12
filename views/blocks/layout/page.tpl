@@ -24,7 +24,7 @@
             "key": "oxid",
             "type": "other",
             "name": "Technically necessary cookies",
-            "needConsent": true,
+            "needConsent": false,
             "cookies": ['sid', 'sid_key', 'language'],
             "uri": "[{$securityinfo}]",
             "js": function () {
@@ -41,6 +41,7 @@
         (tarteaucitron.job = tarteaucitron.job || []).push('analytics');
         (tarteaucitron.job = tarteaucitron.job || []).push('googlemaps');
 
+
     </script>
     [{else}]
     <script>
@@ -56,24 +57,21 @@
                de: {
                    consentModal: {
                        description:
-                           'Hier können sie ihre Cookie-Einstellungen für diese Seite ändern.,
+                           'Hier können sie ihre Cookie-Einstellungen für diese Seite ändern.',
                    },
                    purposes: {
                        analytics: 'Zugriffsanalysen',
                        advertising: 'Werbung',
                        statistics: 'Statistiken',
-                       necessary: 'Speichern der Sprachauswahl, des Warenkorbs und des Login-Stutus',
+                       necessary: 'Speichern der Sprachauswahl, des Warenkorbs und des Login-Status',
                    },
                    googleAnalytics: {
                        description: 'Auswerten von Besucherstatistiken',
                        analytics: 'Statistiken',
-//                       advertising: 'Anzeigen von Werbung',
+                       advertising: 'Anzeigen von Werbung',
                    },
                    essentialOxid: {
-                       description: 'Technisch notwendige Cookies',
-//                       analytics: 'Besucher-Statistiken',
-//                       advertising: 'Anzeigen von Werbung',
-                       necessary: 'Speichern der Sprachauswahl, des Warenkorbs und des Login-Stutus',
+                       description: 'Technisch notwendige Cookie',
                    }
 
                },
@@ -93,10 +91,9 @@
                        advertising: 'Advertising',
                    },
                    essentialOxid: {
-                       description: 'Speichern der Sprachauswahl, ob ein Benutzer eingeloggt ist, Speichern des Warenkorbs',
+                       description: 'Sammeln von Besucherstatistiken',
                        analytics: 'Besucher-Statistiken',
                        advertising: 'Anzeigen von Werbung',
-                       
                    }
 
                },
