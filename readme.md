@@ -9,4 +9,5 @@ Work in Progress, currently searching for volunteers
 - Users
 - Law experts
 
+any pull request, creating issue, sending requirements is welcome
 
