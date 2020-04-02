@@ -7,9 +7,7 @@ $aModule = [
     'version' => '1.1',
     'author' => 'Moritz Demmer',
     'events' => array(
-        'onActivate' => '\OxidProfessionalServices\CookieManager\Core\Events::onActivate',
-        'onDeactivate' => '\OxidProfessionalServices\CookieManager\Core\Events::onDeactivate'
-    ),
+           ),
 
     'templates' => array(),
     'blocks' => array(
